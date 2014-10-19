@@ -1,0 +1,15 @@
+{
+    "installed_packages":
+    [
+        "EJS",
+        "Emmet",
+        "GitGutter",
+        "LESS",
+        "Markdown Preview",
+        "Origami",
+        "Package Control",
+        "SCSS",
+        "Theme - Spacegray",
+        "ToggleQuotes"
+    ]
+}
