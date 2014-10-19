@@ -1,6 +1,6 @@
 # Evan’s dotfiles
 
-![Screenshot of my shell prompt](https://www.dropbox.com/s/s3btt8r88r3memj/Screenshot%202014-10-19%2015.34.58.png?dl=0)
+![Screenshot of my shell prompt](https://www.dropbox.com/s/s3btt8r88r3memj/Screenshot%202014-10-19%2015.34.58.png)
 
 ## Installation
 
