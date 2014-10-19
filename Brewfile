@@ -57,19 +57,19 @@ install xz
 
 # Install other useful binaries
 install ack
-#install exiv2
 install git
-install imagemagick --with-webp
+install graphicsmagick
 install lynx
 install node # This installs `npm` too using the recommended installation method
 install p7zip
 install pigz
 install pv
 install rename
-install rhino
 install tree
 install webkit2png
 install zopfli
+install ffmpeg
+install trash
 
 install homebrew/versions/lua52
 
