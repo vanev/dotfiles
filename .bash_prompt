@@ -11,6 +11,39 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
   export TERM='xterm-256color';
 fi;
 
+if tput setaf 1 &> /dev/null; then
+  tput sgr0; # reset colors
+  bold="\[\$(tput bold)\]";
+  reset="\[\$(tput sgr0)\]";
+  black="\[\$(tput setaf 0)\]";
+  red="\[\$(tput setaf 1)\]";
+  green="\[\$(tput setaf 2)\]";
+  yellow="\[\$(tput setaf 3)\]";
+  blue="\[\$(tput setaf 4)\]";
+  magenta="\[\$(tput setaf 5)\]";
+  cyan="\[\$(tput setaf 6)\]";
+  white="\[\$(tput setaf 7)\]";
+  bright_black="\[\$(tput setaf 8)\]";
+  bright_red="\[\$(tput setaf 9)\]";
+  bright_green="\[\$(tput setaf 10)\]";
+  bright_yellow="\[\$(tput setaf 11)\]";
+  bright_blue="\[\$(tput setaf 12)\]";
+  bright_magenta="\[\$(tput setaf 13)\]";
+  bright_cyan="\[\$(tput setaf 14)\]";
+  bright_white="\[\$(tput setaf 15)\]";
+else
+  bold='';
+  reset="\[\033[0m\]";
+  black="\[\033[1;30m\]";
+  red="\[\033[1;31m\]";
+  green="\[\033[1;32m\]";
+  yellow="\[\033[1;33m\]";
+  blue="\[\033[1;34m\]";
+  purple="\[\033[1;35m\]";
+  cyan="\[\033[1;36m\]";
+  white="\[\033[1;37m\]";
+fi;
+
 prompt_git() {
   local s='';
   local branchName='';
@@ -24,24 +57,26 @@ prompt_git() {
       # Ensure the index is up to date.
       git update-index --really-refresh -q &>/dev/null;
 
+      s=""
+
       # Check for uncommitted changes in the index.
       if ! $(git diff --quiet --ignore-submodules --cached); then
-        s="${red}∆";
+        s+="${2}Ω";
       fi;
 
       # Check for unstaged changes.
       if ! $(git diff-files --quiet --ignore-submodules --); then
-        s="${red}∆";
+        s+="${3}∆";
       fi;
 
       # Check for untracked files.
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        s="${red}∆";
+        s+="${4}±";
       fi;
 
       # Check for stashed files.
       if $(git rev-parse --verify refs/stash &>/dev/null); then
-        s="${red}∆";
+        s+="${5}≈";
       fi;
 
     fi;
@@ -61,48 +96,12 @@ prompt_git() {
   fi;
 }
 
-if tput setaf 1 &> /dev/null; then
-  tput sgr0; # reset colors
-  bold=$(tput bold);
-  reset=$(tput sgr0);
-  black=$(tput setaf 0);
-  red=$(tput setaf 1);
-  green=$(tput setaf 2);
-  yellow=$(tput setaf 3);
-  blue=$(tput setaf 4);
-  magenta=$(tput setaf 5);
-  cyan=$(tput setaf 6);
-  white=$(tput setaf 7);
-  bright_black=$(tput setaf 8);
-  bright_red=$(tput setaf 9);
-  bright_green=$(tput setaf 10);
-  bright_yellow=$(tput setaf 11);
-  bright_blue=$(tput setaf 12);
-  bright_magenta=$(tput setaf 13);
-  bright_cyan=$(tput setaf 14);
-  bright_white=$(tput setaf 15);
-else
-  bold='';
-  reset="\e\[0m";
-  black="\e\[1;30m";
-  blue="\e\[1;34m";
-  cyan="\e\[1;36m";
-  green="\e\[1;32m";
-  orange="\e\[1;33m";
-  purple="\e\[1;35m";
-  red="\e\[1;31m";
-  violet="\e\[1;35m";
-  white="\e\[1;37m";
-  yellow="\e\[1;33m";
-fi;
-
 # Set the terminal title to the current working directory.
-PS1="\[\033]0;\W\007\]";
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${bright_black}\]\W"; # working directory
-PS1+="\$(prompt_git \"${black}:${green}\")"; # Git repository details
-PS1+="\[${reset}\] » "; # prompt
+PS1="\n"; # newline
+PS1+="${bright_black}\W"; # working directory
+PS1+="\$(prompt_git \"${blue}:${green}\" ${magenta} ${red} ${bright_yellow} ${bright_red})"; # Git repository details
+PS1+="${reset} » "; # prompt
 export PS1;
 
-PS2="\[${yellow}\]→ \[${reset}\]";
+PS2="${yellow}→ ${reset}";
 export PS2;
