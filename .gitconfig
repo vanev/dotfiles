@@ -26,7 +26,7 @@
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -a
+	branches = branch -l
 	remotes = remote -v
 
 	# List aliases
@@ -60,6 +60,9 @@
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+	# Recent Branches
+	rb = !"git for-each-ref --sort=-committerdate refs/heads/ | head"
+
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
@@ -87,6 +90,11 @@
 
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
+
+[branch]
+
+	autosetupmerge = true
+	autosetuprebase = always
 
 [core]
 
@@ -167,6 +175,10 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+
+[tig]
+
+	vertical-split = false
 
 # URL shorthands
 
