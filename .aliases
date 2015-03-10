@@ -149,3 +149,5 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias psql="/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432"

@@ -44,6 +44,7 @@ cask install transmit 2> /dev/null
 # cask install vagrant 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
+cask install postgres 2> /dev/null
 
 cask alfred link
 
