@@ -73,6 +73,7 @@ install trash
 install rbenv
 install ruby-build
 install irssi
+install tmux
 
 # Remove outdated versions from the cellar
 cleanup
