@@ -30,6 +30,9 @@ alias l="ls -lF ${colorflag}"
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag}"
 
+# List all files, colorized in long format, grouped by extension, including dot files
+alias lx="ls -laxF ${colorflag}"
+
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
