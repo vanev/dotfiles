@@ -10,6 +10,7 @@ upgrade
 install caskroom/cask/brew-cask
 tap caskroom/versions
 
+cask install 1password 2> /dev/null
 cask install alfred 2> /dev/null
 cask install atom 2> /dev/null
 cask install dropbox 2> /dev/null
@@ -22,6 +23,7 @@ cask install imageoptim 2> /dev/null
 cask install iterm2 2> /dev/null
 cask install mailbox 2> /dev/null
 cask install opera 2> /dev/null
+cask install postgres 2> /dev/null
 cask install qlmarkdown 2> /dev/null
 cask install quicklook-json 2> /dev/null
 cask install sketch 2> /dev/null
@@ -29,7 +31,6 @@ cask install spotify 2> /dev/null
 cask install transmission 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
-cask install postgres 2> /dev/null
 
 cask alfred link
 
