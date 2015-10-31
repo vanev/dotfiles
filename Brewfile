@@ -56,20 +56,18 @@ install homebrew/dupes/screen
 # install xz
 
 # Install other useful binaries
-install ack
+# install ack
 install git
 install graphicsmagick
-install lynx
+# install lynx
 install node # This installs `npm` too using the recommended installation method
-install p7zip
-install pigz
-install pv
-install rename
-install tree
+# install p7zip
+# install pigz
+# install pv
+# install rename
 install webkit2png
-install zopfli
 install ffmpeg
-install trash
+# install trash
 install rbenv
 install ruby-build
 install irssi
