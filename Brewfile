@@ -30,49 +30,21 @@ install wget --enable-iri
 install vim --override-system-vi
 install homebrew/dupes/grep
 install homebrew/dupes/screen
-# install homebrew/php/php55 --with-gmp
-
-# Install some CTF tools; see https://github.com/ctfs/write-ups
-# install bfg
-# install binutils
-# install binwalk
-# install cifer
-# install dex2jar
-# install dns2tcp
-# install fcrackzip
-# install foremost
-# install hashpump
-# install hydra
-# install john
-# install knock
-# install nmap
-# install pngcheck
-# install sqlmap
-# install tcpflow
-# install tcpreplay
-# install tcptrace
-# install ucspi-tcp # `tcpserver` et al.
-# install xpdf
-# install xz
 
 # Install other useful binaries
-# install ack
 install git
 install graphicsmagick
-# install lynx
-install node # This installs `npm` too using the recommended installation method
-# install p7zip
-# install pigz
-# install pv
-# install rename
+install node
 install webkit2png
 install ffmpeg
-# install trash
 install rbenv
 install ruby-build
 install irssi
 install tmux
 install heroku
+install redis
+install tig
+install hub
 
 # Remove outdated versions from the cellar
 cleanup
