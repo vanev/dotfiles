@@ -14,6 +14,7 @@ cask install 1password 2> /dev/null
 cask install alfred 2> /dev/null
 cask install atom 2> /dev/null
 cask install dropbox 2> /dev/null
+cask install dash 2> /dev/null
 cask install firefox 2> /dev/null
 cask install flux 2> /dev/null
 cask install google-chrome 2> /dev/null
@@ -28,6 +29,7 @@ cask install qlmarkdown 2> /dev/null
 cask install quicklook-json 2> /dev/null
 cask install sketch 2> /dev/null
 cask install spotify 2> /dev/null
+cask install spectacle 2> /dev/null
 cask install transmission 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
