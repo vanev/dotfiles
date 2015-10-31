@@ -11,37 +11,22 @@ install caskroom/cask/brew-cask
 tap caskroom/versions
 
 cask install alfred 2> /dev/null
-cask install appcleaner 2> /dev/null
-# cask install arq 2> /dev/null
 cask install atom 2> /dev/null
 cask install dropbox 2> /dev/null
 cask install firefox 2> /dev/null
-# cask install flash 2> /dev/null
 cask install flux 2> /dev/null
 cask install google-chrome 2> /dev/null
 cask install google-chrome-canary 2> /dev/null
-# cask install hazel 2> /dev/null
 cask install imagealpha 2> /dev/null
 cask install imageoptim 2> /dev/null
 cask install iterm2 2> /dev/null
 cask install mailbox 2> /dev/null
 cask install opera 2> /dev/null
-cask install qlcolorcode 2> /dev/null
 cask install qlmarkdown 2> /dev/null
-cask install qlprettypatch 2> /dev/null
-cask install qlstephen 2> /dev/null
 cask install quicklook-json 2> /dev/null
-cask install screenflick 2> /dev/null
-# cask install seil 2> /dev/null
 cask install sketch 2> /dev/null
-# cask install slack 2> /dev/null
 cask install spotify 2> /dev/null
-cask install sublime-text 2> /dev/null
-# cask install the-unarchiver 2> /dev/null
-# cask install torbrowser 2> /dev/null
 cask install transmission 2> /dev/null
-cask install transmit 2> /dev/null
-# cask install vagrant 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
 
