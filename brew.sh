@@ -81,20 +81,61 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
+brew install ffmpeg
 brew install git
 brew install git-lfs
+brew install heroku
+brew install hub
 brew install imagemagick --with-webp
+brew install irssi
 brew install lua
 brew install lynx
+brew install node
 brew install p7zip
 brew install pigz
 brew install pv
+brew install rbenv
+brew install redis
 brew install rename
 brew install rlwrap
+brew install ruby-build
+brew install speedtest_cli
 brew install ssh-copy-id
+brew install testssl
+brew install tig
 brew install tree
 brew install vbindiff
 brew install zopfli
+
+# Install brew-cask
+brew install caskroom/cask/brew-cask
+brew tap caskroom/versions
+
+brew cask install 1password 2> /dev/null
+brew cask install alfred 2> /dev/null
+brew cask install atom 2> /dev/null
+brew cask install dropbox 2> /dev/null
+brew cask install dash 2> /dev/null
+brew cask install firefox 2> /dev/null
+brew cask install flux 2> /dev/null
+brew cask install google-chrome 2> /dev/null
+brew cask install google-chrome-canary 2> /dev/null
+brew cask install imagealpha 2> /dev/null
+brew cask install imageoptim 2> /dev/null
+brew cask install iterm2 2> /dev/null
+brew cask install mailbox 2> /dev/null
+brew cask install opera 2> /dev/null
+brew cask install postgres 2> /dev/null
+brew cask install qlmarkdown 2> /dev/null
+brew cask install quicklook-json 2> /dev/null
+brew cask install sketch 2> /dev/null
+brew cask install spotify 2> /dev/null
+brew cask install spectacle 2> /dev/null
+brew cask install transmission 2> /dev/null
+brew cask install virtualbox 2> /dev/null
+brew cask install vlc 2> /dev/null
+
+brew cask alfred link
 
 # Remove outdated versions from the cellar.
 brew cleanup
