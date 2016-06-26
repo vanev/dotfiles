@@ -154,3 +154,5 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 alias psql="/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432"
+
+alias wtr="curl http://wttr.in/New_York"

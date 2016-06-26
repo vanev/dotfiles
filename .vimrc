@@ -1,7 +1,5 @@
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
 
 " Make Vim more useful
 set nocompatible
@@ -24,12 +22,6 @@ let mapleader=","
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-	set undodir=~/.vim/undo
-endif
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*

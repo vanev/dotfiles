@@ -14,6 +14,7 @@
 
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
+    fp = !"git pull; git submodule foreach git pull origin master; git fetch origin --prune; git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# Clone a repository including all submodules
 	c = clone --recursive
@@ -26,7 +27,7 @@
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -l
+	b = branch -lv
 	remotes = remote -v
 
 	# List aliases
