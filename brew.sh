@@ -84,6 +84,7 @@ brew install ack
 brew install ffmpeg
 brew install git
 brew install git-lfs
+brew install gpg
 brew install heroku
 brew install hub
 brew install imagemagick --with-webp
