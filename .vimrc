@@ -8,12 +8,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Use the Solarized Dark theme
-set background=dark
+" set background=dark
+
+let g:airline_theme='luna'
 
 " Enhance command-line completion
 set wildmenu
@@ -106,3 +113,5 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+map <C-\> :NERDTreeToggle<CR>
