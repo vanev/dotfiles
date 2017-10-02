@@ -106,6 +106,8 @@ brew install testssl
 brew install tig
 brew install tree
 brew install vbindiff
+brew install webkit2png
+brew install yarn
 brew install zopfli
 
 # Install brew-cask
@@ -115,28 +117,31 @@ brew tap caskroom/versions
 brew cask install 1password 2> /dev/null
 brew cask install alfred 2> /dev/null
 brew cask install atom 2> /dev/null
-brew cask install dropbox 2> /dev/null
 brew cask install dash 2> /dev/null
+brew cask install dropbox 2> /dev/null
 brew cask install firefox 2> /dev/null
 brew cask install flux 2> /dev/null
 brew cask install google-chrome 2> /dev/null
 brew cask install google-chrome-canary 2> /dev/null
-brew cask install imagealpha 2> /dev/null
 brew cask install imageoptim 2> /dev/null
 brew cask install iterm2 2> /dev/null
-brew cask install mailbox 2> /dev/null
-brew cask install opera 2> /dev/null
+brew cask install karabiner-elements 2> /dev/null
+brew cask install keybase 2> /dev/null
 brew cask install postgres 2> /dev/null
 brew cask install qlmarkdown 2> /dev/null
 brew cask install quicklook-json 2> /dev/null
+brew cask install rescuetime 2> /dev/null
 brew cask install sketch 2> /dev/null
-brew cask install spotify 2> /dev/null
+brew cask install slack 2> /dev/null
 brew cask install spectacle 2> /dev/null
+brew cask install spotify 2> /dev/null
+brew cask install trailer 2> /dev/null
 brew cask install transmission 2> /dev/null
-brew cask install virtualbox 2> /dev/null
 brew cask install vlc 2> /dev/null
+brew cask install virtualbox 2> /dev/null
 
 brew cask alfred link
 
 # Remove outdated versions from the cellar.
 brew cleanup
+brew cask cleanup
