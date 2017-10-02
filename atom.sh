@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Install Atom packages using APM.
+
+apm install ariake-dark-syntax
+apm install atom-beautify
+apm install atom-clock
+apm install atom-typescript
+apm install autocomplete-elixir
+apm install ava
+apm install base16-ocean-dark-spacegray
+apm install busy
+apm install busy-signal
+apm install color-picker
+apm install cucumber
+apm install dash
+apm install duotone-blue-dark-syntax
+apm install editorconfig
+apm install emmet
+apm install erb-snippets
+apm install ex-mode
+apm install file-icons
+apm install firewatch-syntax
+apm install git-plus
+apm install hyperclick
+apm install intentions
+apm install js-hyperclick
+apm install language-ejs
+apm install language-elixir
+apm install language-elm
+apm install language-haskell
+apm install language-ledger
+apm install language-scala
+apm install language-tmux
+apm install linter
+apm install linter-elm-make
+apm install linter-eslint
+apm install linter-flow
+apm install linter-ui-default
+apm install nord-atom-syntax
+apm install nord-atom-ui
+apm install oceanic-next
+apm install pigments
+apm install prettier-atom
+apm install react
+apm install relative-numbers
+apm install spacegray-dark-ui
+apm install tab-foldername-index
+apm install vim-mode-plus
