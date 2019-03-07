@@ -16,8 +16,6 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-# Install some other useful utilities like `sponge`.
-brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
@@ -39,106 +37,62 @@ brew install wget --with-iri
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
-brew install screen
-brew install php
-brew install gmp
+brew install curl
 
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+brew install vim --with-override-system-vi
+brew install neovim --with-override-system-vi
+# This is needed for python support on Neovim for YouCompleteMe
+# Please see https://github.com/neovim/neovim/issues/1315
+brew install python3
+pip3 install --user --upgrade neovim
+nvim +PlugClean! +qall
+nvim +silent +PlugInstall +qall
+python3 ~/.config/nvim/plugged/YouCompleteMe/install.py
 
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
-
-# Install other useful binaries.
-brew install ack
-#brew install exiv2
-brew install ffmpeg
+brew install ag
 brew install git
 brew install git-lfs
 brew install gpg
 brew install heroku
-brew install hub
-brew install imagemagick --with-webp
 brew install irssi
-brew install lua
-brew install lynx
-brew install node
-brew install p7zip
-brew install pigz
-brew install pv
+brew install nvm
 brew install rbenv
 brew install redis
-brew install rename
-brew install rlwrap
-brew install ruby-build
-brew install speedtest_cli
 brew install ssh-copy-id
-brew install testssl
 brew install tig
-brew install tree
-brew install vbindiff
+brew install tmux
 brew install webkit2png
-brew install yarn
-brew install zopfli
+brew install yarn --without-node
 
 # Install brew-cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-brew cask install 1password 2> /dev/null
-brew cask install alfred 2> /dev/null
-brew cask install atom 2> /dev/null
-brew cask install dash 2> /dev/null
-brew cask install dropbox 2> /dev/null
-brew cask install firefox 2> /dev/null
-brew cask install flux 2> /dev/null
-brew cask install google-chrome 2> /dev/null
-brew cask install google-chrome-canary 2> /dev/null
-brew cask install imageoptim 2> /dev/null
-brew cask install iterm2 2> /dev/null
-brew cask install karabiner-elements 2> /dev/null
-brew cask install keybase 2> /dev/null
-brew cask install postgres 2> /dev/null
-brew cask install qlmarkdown 2> /dev/null
-brew cask install quicklook-json 2> /dev/null
-brew cask install rescuetime 2> /dev/null
-brew cask install sketch 2> /dev/null
-brew cask install slack 2> /dev/null
-brew cask install spectacle 2> /dev/null
-brew cask install spotify 2> /dev/null
-brew cask install trailer 2> /dev/null
-brew cask install transmission 2> /dev/null
-brew cask install vlc 2> /dev/null
-brew cask install virtualbox 2> /dev/null
+brew cask install 1password
+brew cask install alfred
+brew cask install dash
+brew cask install discord
+brew cask install dropbox
+brew cask install firefox
+brew cask install google-chrome
+brew cask install google-chrome-canary
+brew cask install imageoptim
+brew cask install iterm2
+brew cask install karabiner-elements
+brew cask install keybase
+brew cask install nordvpn
+brew cask install omnifocus
+brew cask install rescuetime
+brew cask install slack
+brew cask install spectacle
+brew cask install spotify
+brew cask install trailer
+brew cask install transmission
+brew cask install vlc
+brew cask install virtualbox
+brew cask install visual-studio-code
 
 brew cask alfred link
 

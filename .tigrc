@@ -1,3 +1,0 @@
-set status-show-untracked-files = true
-set status-show-untracked-dirs = true
-set main-view-id-display = yes

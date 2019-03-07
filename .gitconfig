@@ -148,7 +148,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
 
@@ -180,6 +180,9 @@
 [tig]
 
 	vertical-split = false
+	status-show-untracked-files = true
+	status-show-untracked-dirs = true
+	main-view-id-display = yes
 
 # URL shorthands
 
