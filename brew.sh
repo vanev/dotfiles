@@ -40,6 +40,7 @@ brew install gnupg
 brew install grep
 brew install openssh
 brew install curl
+brew install cmake
 
 brew install vim --with-override-system-vi
 brew install neovim --with-override-system-vi
