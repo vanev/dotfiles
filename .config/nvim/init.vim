@@ -51,8 +51,8 @@ Plug 'editorconfig/editorconfig-vim'
 " emmet
 Plug 'mattn/emmet-vim'
 
-" semantic-based completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " linting engine
 Plug 'w0rp/ale'
@@ -80,51 +80,6 @@ let g:NERDTreeQuitOnOpen=1
 
 " enable highlight for JSDocs
 let g:javascript_plugin_jsdoc = 1
-
-" disable auto_triggering ycm suggestions pane and instead
-" use semantic completion only on Ctrl+n
-let ycm_trigger_key = '<C-n>'
-let g:ycm_auto_trigger = 0
-let g:ycm_key_invoke_completion = ycm_trigger_key
-
-" this is some arcane magic to allow cycling through the YCM options
-" with the same key that opened it.
-" See http://vim.wikia.com/wiki/Improve_completion_popup_menu for more info.
-let g:ycm_key_list_select_completion = ['<TAB>', '<C-j>']
-inoremap <expr> ycm_trigger_key pumvisible() ? "<C-j>" : ycm_trigger_key;
-
-" show autocomplete suggestions only when typing more than 2 characters
-let g:ycm_min_num_of_chars_for_completion = 2
-
-" show at most 20 completion candidates at a time (more than this would be
-" ridiculous, you'd press TAB so many times it would be better to simply type
-" the entire thing lol)
-" this applies only to the semantic-based engine
-let g:ycm_max_num_candidates = 20
-
-" this is the same as above, but only for the identifier-based engine
-let g:ycm_max_num_identifier_candidates = 10
-
-" blacklist of filetypes in which autocomplete should be disabled
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar': 1,
-      \ 'qf': 1,
-      \ 'notes': 1,
-      \ 'markdown': 1,
-      \ 'unite': 1,
-      \ 'text': 1,
-      \ 'vimwiki': 1,
-      \ 'pandoc': 1,
-      \ 'infolog': 1,
-      \ 'mail': 1
-      \}
-
-" blacklist of filepaths in which autocomplete should be disabled
-let g:ycm_filepath_blacklist = {
-      \ 'html': 1,
-      \ 'jsx': 1,
-      \ 'xml': 1,
-      \}
 
 " fix files on save
 let g:ale_fix_on_save = 1
@@ -226,10 +181,6 @@ set directory=/tmp//
 " map fzf to ctrl+p
 nnoremap <C-P> :Files<CR>
 
-" YouCompleteMeMappings
-nnoremap ,dl    :YcmCompleter GoToDeclaration<CR>
-nnoremap ,df    :YcmCompleter GoToDefinition<CR>
-nnoremap ,#     :YcmCompleter GoToReferences<CR>
 
 
 
