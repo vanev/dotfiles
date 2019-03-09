@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 10,
+        "colorSelected" : "#95B8D9FF",
+        "font" : "Fira Code",
+        "color" : "#61778CFF"
+      },
+      "shortcut" : {
+        "size" : 10,
+        "colorSelected" : "#E7DFD5FF",
+        "font" : "Fira Code",
+        "color" : "#61778CFF"
+      },
+      "backgroundSelected" : "#022C34FF",
+      "text" : {
+        "size" : 20,
+        "colorSelected" : "#E7DFD5FF",
+        "font" : "Fira Code",
+        "color" : "#E7DFD5FF"
+      },
+      "iconPaddingHorizontal" : 10,
+      "paddingVertical" : 5,
+      "iconSize" : 25
+    },
+    "search" : {
+      "paddingVertical" : 5,
+      "background" : "#021B2100",
+      "spacing" : 4,
+      "text" : {
+        "size" : 40,
+        "colorSelected" : "#000000FF",
+        "font" : "Fira Code",
+        "color" : "#E7DFD5FF"
+      },
+      "backgroundSelected" : "#B3D7FFFF"
+    },
+    "window" : {
+      "color" : "#021B21CC",
+      "paddingHorizontal" : 0,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 10,
+      "roundness" : 3,
+      "paddingVertical" : 4
+    },
+    "credit" : "Evan Siegel",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#61778CFF",
+      "thickness" : 5
+    },
+    "name" : "Navy and Ivory"
+  }
+}
