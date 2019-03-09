@@ -19,10 +19,10 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install Bash 4.
 brew install bash
-brew install bash-completion2
+brew install bash-completion@2
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -31,7 +31,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -42,15 +42,8 @@ brew install openssh
 brew install curl
 brew install cmake
 
-brew install vim --with-override-system-vi
-brew install neovim --with-override-system-vi
-# This is needed for python support on Neovim for YouCompleteMe
-# Please see https://github.com/neovim/neovim/issues/1315
-brew install python3
-pip3 install --user --upgrade neovim
-nvim +PlugClean! +qall
-nvim +silent +PlugInstall +qall
-python3 ~/.config/nvim/plugged/YouCompleteMe/install.py
+brew install vim
+brew install neovim
 
 brew install ag
 brew install git
@@ -65,7 +58,7 @@ brew install ssh-copy-id
 brew install tig
 brew install tmux
 brew install webkit2png
-brew install yarn --without-node
+brew install yarn
 
 # Install brew-cask
 brew install caskroom/cask/brew-cask
@@ -95,8 +88,5 @@ brew cask install vlc
 brew cask install virtualbox
 brew cask install visual-studio-code
 
-brew cask alfred link
-
 # Remove outdated versions from the cellar.
 brew cleanup
-brew cask cleanup
