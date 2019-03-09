@@ -14,6 +14,9 @@ unset file;
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
