@@ -38,6 +38,9 @@ Plug 'pangloss/vim-javascript'
 " rust support
 " Plug 'rust-lang/rust.vim'
 
+" elm support
+Plug 'elmcast/elm-vim'
+
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
