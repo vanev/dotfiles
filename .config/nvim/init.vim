@@ -60,6 +60,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " linting engine
 Plug 'w0rp/ale'
 
+" Dash
+Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
