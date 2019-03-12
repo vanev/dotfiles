@@ -71,6 +71,9 @@ call plug#end()
 " => Plugin Related Configs
 """""""""""""""""""""""""""""""""""""""""""""""
 
+" Start Deoplete
+let g:deoplete#enable_at_startup = 1
+
 " Neomake async hooks
 call neomake#configure#automake('w')
 
