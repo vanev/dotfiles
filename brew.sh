@@ -49,44 +49,35 @@ brew install ag
 brew install git
 brew install git-lfs
 brew install gpg
-brew install heroku
 brew install irssi
 brew install nvm
 brew install rbenv
 brew install redis
 brew install ssh-copy-id
 brew install tig
-brew install tmux
-brew install webkit2png
 brew install yarn
 
-# Install brew-cask
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
-
-brew cask install 1password
-brew cask install alfred
-brew cask install dash
-brew cask install discord
-brew cask install dropbox
-brew cask install firefox
-brew cask install google-chrome
-brew cask install google-chrome-canary
-brew cask install imageoptim
-brew cask install iterm2
-brew cask install karabiner-elements
-brew cask install keybase
-brew cask install nordvpn
-brew cask install omnifocus
-brew cask install rescuetime
-brew cask install slack
-brew cask install spectacle
-brew cask install spotify
-brew cask install trailer
-brew cask install transmission
-brew cask install vlc
-brew cask install virtualbox
-brew cask install visual-studio-code
+brew install --cask 1password
+brew install --cask alfred
+brew install --cask brave-browser
+brew install --cask dash
+brew install --cask discord
+brew install --cask docker
+brew install --cask dropbox
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask google-chrome-canary
+brew install --cask imageoptim
+brew install --cask iterm2
+brew install --cask karabiner-elements
+brew install --cask mullvad
+brew install --cask qmk-toolbox
+brew install --cask rectangle
+brew install --cask signal
+brew install --cask spotify
+brew install --cask transmission
+brew install --cask visual-studio-code
+brew install --cask vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup

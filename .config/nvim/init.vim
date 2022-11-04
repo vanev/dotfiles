@@ -17,9 +17,6 @@ set cursorline              " Find the current line quickly.
 
 call plug#begin()
 
-" nord-vim colorscheme
-" Plug 'arcticicestudio/nord-vim'
-
 " neomake
 Plug 'neomake/neomake'
 
@@ -27,19 +24,13 @@ Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 
 " Typescript Syntax Highlight
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 " Async execution library needed by tsuquyomi
-" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " A client to TSSServer so that we can get autocompletion
-" Plug 'Quramy/tsuquyomi'
-
-" rust support
-" Plug 'rust-lang/rust.vim'
-
-" elm support
-Plug 'elmcast/elm-vim'
+Plug 'Quramy/tsuquyomi'
 
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -51,17 +42,11 @@ Plug 'junegunn/fzf.vim'
 " .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
-" emmet
-Plug 'mattn/emmet-vim'
-
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " linting engine
 Plug 'w0rp/ale'
-
-" Dash
-Plug 'rizzatti/dash.vim'
 
 call plug#end()
 
@@ -116,23 +101,12 @@ if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
-" make emmet behave well with JSX in JS and TS files
-let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx',
-\  },
-\}
-
-
 """""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Related Configs
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " 256 colors
 set t_Co=256
-
-" set colorscheme
-" colorscheme nord
 
 " long lines as just one line (have to scroll horizontally)
 set nowrap
@@ -143,11 +117,6 @@ set number
 
 " show the status line all the time
 set laststatus=2
-
-" toggle invisible characters
-" set invlist
-" set list
-" set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 
 " disable scrollbars (real hackers don't use scrollbars)
 set guioptions-=r
@@ -208,7 +177,7 @@ set expandtab
 " :help smarttab
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
 

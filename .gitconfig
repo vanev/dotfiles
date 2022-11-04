@@ -83,9 +83,9 @@
 		fi \
 	}; f"
 
-    # A better git stash
-    wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
-    unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
+	# A better git stash
+	wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
+	unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
 
 [apply]
 
@@ -164,6 +164,10 @@
 
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
+
+[init]
+
+	defaultBranch = main
 
 [merge]
 
