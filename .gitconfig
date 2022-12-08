@@ -181,6 +181,10 @@
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
+[rebase]
+
+  autosquash = true
+
 [tig]
 
 	vertical-split = false
