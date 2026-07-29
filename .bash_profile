@@ -2,7 +2,11 @@
 export PATH="$HOME/bin:$PATH";
 export PATH="/usr/local/bin:$PATH";
 export PATH="/usr/local/sbin:$PATH";
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH";
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH";
+export PATH="$HOME/.local/bin:$PATH";
+
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)";
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -15,7 +19,8 @@ unset file;
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -33,10 +38,7 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-# Add tab completion for many Bash commands
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh";
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 __git_complete g __git_main;
