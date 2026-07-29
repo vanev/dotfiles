@@ -45,37 +45,34 @@ brew install cmake
 brew install vim
 brew install neovim
 
-brew install ag
+brew install gh
 brew install git
 brew install git-lfs
-brew install gpg
 brew install irssi
 brew install nvm
 brew install rbenv
 brew install redis
 brew install ssh-copy-id
+brew install tailscale
 brew install tig
 brew install yarn
 
 brew install --cask 1password
-brew install --cask alfred
-brew install --cask brave-browser
-brew install --cask dash
 brew install --cask discord
 brew install --cask docker
 brew install --cask dropbox
 brew install --cask firefox
+brew install --cask ghostpepper
+brew install --cask ghostty
 brew install --cask google-chrome
-brew install --cask google-chrome-canary
 brew install --cask imageoptim
-brew install --cask iterm2
 brew install --cask karabiner-elements
-brew install --cask mullvad
-brew install --cask qmk-toolbox
+brew install --cask obsidian
+brew install --cask raycast
 brew install --cask rectangle
 brew install --cask signal
 brew install --cask spotify
-brew install --cask transmission
+brew install --cask the-unarchiver
 brew install --cask visual-studio-code
 brew install --cask vlc
 
