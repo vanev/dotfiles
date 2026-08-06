@@ -14,7 +14,9 @@
 
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
-    fp = !"git pull; git submodule foreach git pull origin master; git fetch origin --prune; git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	# Same, plus pruning remote-tracking refs and deleting local branches already merged
+	fp = !"git pull; git submodule foreach git pull origin master; git fetch origin --prune; git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# Clone a repository including all submodules
 	c = clone --recursive
@@ -84,8 +86,11 @@
 	}; f"
 
 	# A better git stash
-	wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
+	wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip' --no-verify"
 	unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
+
+	# Skip the editor prompt when continuing a rebase after resolving conflicts.
+	continue = "-c core.editor=true rebase --continue"
 
 [apply]
 
@@ -188,6 +193,16 @@
 [rebase]
 
   autosquash = true
+
+[credential "https://github.com"]
+
+	helper =
+	helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+
+	helper =
+	helper = !gh auth git-credential
 
 [tig]
 
