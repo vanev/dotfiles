@@ -203,6 +203,10 @@ require('lazy').setup({
             horizontal = { preview_width = 0.6 },
           },
         },
+        pickers = {
+          -- fd/rg exclude dotfiles by default; show them (still respects .gitignore)
+          find_files = { hidden = true },
+        },
       })
     end,
   },
