@@ -39,6 +39,6 @@ Suggestions/improvements [welcome](https://github.com/vanev/dotfiles/issues)!
 
 ## Author
 
-[Evan Siegel](http://evansiegel.name/)
+[Evan Siegel](http://evan.siegel.hiphop/)
 
 Forked from [Mathias Bynens](https://mathiasbynens.be/)’s [dotfiles](https://github.com/mathiasbynens/dotfiles).
