@@ -33,14 +33,6 @@ To pull down changes later, `cd` back into the repo and re-run `source bootstrap
 
 Neither file is tracked by this repo.
 
-### Neovim
-
-[`.config/nvim/init.lua`](.config/nvim/init.lua) is a single-file Neovim config using [lazy.nvim](https://github.com/folke/lazy.nvim), with LSP (via Mason), Telescope, Treesitter, completion, and git integration. See the comment block at the top for a keybinding quick reference. `EDITOR`/`VISUAL` are set to `nvim` in `.exports`, and `vim`/`vimdiff` are aliased to it in `.aliases`.
-
-### tmux
-
-[`.tmux.conf`](.tmux.conf) configures tmux, including pane navigation that integrates with Neovim splits via [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator), so `Ctrl+h/j/k/l` moves seamlessly between tmux panes and vim splits.
-
 ## Feedback
 
 Suggestions/improvements [welcome](https://github.com/vanev/dotfiles/issues)!
