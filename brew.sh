@@ -44,6 +44,8 @@ brew install cmake
 
 brew install vim
 brew install neovim
+# Powers Telescope's find_files/live_grep (and respects .gitignore/.ignore)
+brew install ripgrep
 
 brew install gh
 brew install git
