@@ -240,6 +240,7 @@ require('lazy').setup({
         ensure_installed = {
           'ts_ls',      -- TypeScript/JavaScript
           'pyright',       -- Python
+          'expert',        -- Elixir (official LSP; needs elixir/erlang on PATH, via mise)
         },
       })
       require('mason-tool-installer').setup({
@@ -261,7 +262,8 @@ require('lazy').setup({
       -- "framework" is deprecated in favor of vim.lsp.config/vim.lsp.enable on Nvim 0.11+)
       vim.lsp.config('ts_ls', { on_attach = on_attach })
       vim.lsp.config('pyright', { on_attach = on_attach })   -- Python
-      vim.lsp.enable({ 'ts_ls', 'pyright' })
+      vim.lsp.config('expert', { on_attach = on_attach })    -- Elixir
+      vim.lsp.enable({ 'ts_ls', 'pyright', 'expert' })
     end,
   },
 
@@ -281,6 +283,10 @@ require('lazy').setup({
           javascriptreact = { 'prettier' },
           typescriptreact = { 'prettier' },
           lua = { 'stylua' },
+          -- `mix format` from the project's own toolchain (respects .formatter.exs)
+          elixir = { 'mix' },
+          eelixir = { 'mix' },
+          heex = { 'mix' },
         },
         format_on_save = {
           timeout_ms = 2000,
@@ -346,7 +352,7 @@ require('lazy').setup({
       require('nvim-treesitter').setup()
 
       -- Parsers for these languages (main branch has no `ensure_installed`/`auto_install`)
-      local parsers = { 'typescript', 'tsx', 'javascript', 'python', 'lua', 'vim', 'vimdoc' }
+      local parsers = { 'typescript', 'tsx', 'javascript', 'python', 'lua', 'vim', 'vimdoc', 'elixir', 'heex', 'eex' }
       require('nvim-treesitter').install(parsers):wait(300000)
 
       -- Highlighting/indent are opt-in per buffer on main; wire them up for the languages above

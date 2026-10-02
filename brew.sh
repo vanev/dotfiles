@@ -53,6 +53,8 @@ brew install git-lfs
 brew install irssi
 brew install nvm
 brew install rbenv
+# Version manager for Elixir/Erlang (activated in .bash_profile)
+brew install mise
 brew install redis
 brew install ssh-copy-id
 brew install tailscale
