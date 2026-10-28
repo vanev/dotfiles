@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-# Make nvim the default editor.
-export EDITOR='nvim';
-export VISUAL='nvim';
+# Make nvim the default editor, falling back to vim where it isn’t installed.
+if command -v nvim > /dev/null; then
+	export EDITOR='nvim';
+else
+	export EDITOR='vim';
+fi;
+export VISUAL="${EDITOR}";
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
