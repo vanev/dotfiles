@@ -4,8 +4,15 @@ export PATH="/usr/local/bin:$PATH";
 export PATH="/usr/local/sbin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
 
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)";
+# Set PATH, MANPATH, etc., for Homebrew (Apple Silicon, Intel macOS, or Linux),
+# if it's installed.
+for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+	if [ -x "$brew_bin" ]; then
+		eval "$("$brew_bin" shellenv)";
+		break;
+	fi;
+done;
+unset brew_bin;
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -21,8 +28,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which mise > /dev/null; then eval "$(mise activate bash)"; fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && . "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -40,12 +47,21 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-# Ensure existing Homebrew v1 completions continue to work
-export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d";
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh";
+# Load bash-completion: Homebrew's (ensuring existing v1 completions continue to
+# work), or else the system's, e.g. the `bash-completion` package on Debian.
+if [[ -n "$HOMEBREW_PREFIX" && -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]]; then
+	export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_PREFIX/etc/bash_completion.d";
+	. "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh";
+elif [[ -r /usr/share/bash-completion/bash_completion ]]; then
+	. /usr/share/bash-completion/bash_completion;
+fi;
 
-# Enable tab completion for `g` by marking it as an alias for `git`
-__git_complete g __git_main;
+# Enable tab completion for `g` by marking it as an alias for `git`. System
+# bash-completion loads git's completion lazily, so load it up front if needed.
+if ! type -t __git_complete > /dev/null && [[ -r /usr/share/bash-completion/completions/git ]]; then
+	. /usr/share/bash-completion/completions/git;
+fi;
+type -t __git_complete > /dev/null && __git_complete g __git_main;
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -57,6 +73,7 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-export TERM=screen-256color
+# Only if this machine has the terminfo entry for it (minimal Linux images may not)
+infocmp screen-256color > /dev/null 2>&1 && export TERM=screen-256color;
 
 [ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info

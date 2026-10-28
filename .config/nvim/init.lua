@@ -183,6 +183,12 @@ vim.opt.rtp:prepend(lazypath)
 -- PLUGINS
 -- ============================================================================
 -- All plugins are defined here. lazy.nvim will auto-install them on first run.
+--
+-- Set DOTFILES_MINIMAL=1 (e.g. in ~/.extra on a server) to skip the plugins that
+-- need a toolchain to install: LSP servers/formatters via Mason (node, python,
+-- elixir), treesitter parsers (C compiler + tree-sitter CLI), and fzf-native (make).
+
+local minimal = vim.env.DOTFILES_MINIMAL == '1'
 
 require('lazy').setup({
   -- ----------------------------------------------------------------------------
@@ -214,6 +220,7 @@ require('lazy').setup({
   -- Telescope extension for better performance
   {
     'nvim-telescope/telescope-fzf-native.nvim',
+    cond = not minimal,
     build = 'make',
     config = function()
       require('telescope').load_extension('fzf')
@@ -225,6 +232,7 @@ require('lazy').setup({
   -- ----------------------------------------------------------------------------
   {
     'neovim/nvim-lspconfig',
+    cond = not minimal,
     dependencies = {
       -- Mason: manages LSP server installations
       'williamboman/mason.nvim',
@@ -272,6 +280,7 @@ require('lazy').setup({
   -- ----------------------------------------------------------------------------
   {
     'stevearc/conform.nvim',
+    cond = not minimal,           -- Formatters are installed by Mason, above
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     config = function()
@@ -346,6 +355,7 @@ require('lazy').setup({
   -- ----------------------------------------------------------------------------
   {
     'nvim-treesitter/nvim-treesitter',
+    cond = not minimal,
     branch = 'main',
     build = ':TSUpdate',
     config = function()
