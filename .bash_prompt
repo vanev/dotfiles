@@ -107,7 +107,7 @@ fi;
 PS1="\n"; # newline
 # When connected over SSH, show which machine this is.
 if [[ -n "${SSH_CONNECTION}" ]]; then
-  PS1+="${userStyle}\u${bright_black}@${cyan}\h "; # user@host
+  PS1+="${bright_black}[${userStyle}\u${bright_black}@${cyan}\h${bright_black}] "; # [user@host]
 fi;
 PS1+="${bright_black}\W"; # working directory
 PS1+="\$(prompt_git \"${blue}:${green}\" ${magenta} ${red} ${bright_yellow} ${bright_red})"; # Git repository details
